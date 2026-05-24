@@ -2,7 +2,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-def SelfAttention(nn.Module):
+class SelfAttention(nn.Module):
     
     #Define the parameters of the class for object initialization
     def __init__(self,d_model,d_head):
