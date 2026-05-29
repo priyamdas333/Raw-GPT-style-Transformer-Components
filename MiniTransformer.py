@@ -24,4 +24,9 @@ class MiniTransformer(nn.Module):
         self.token_emb=nn.Embedding(vocab_size,d_model)
         self.pos_emb=nn.Embedding(max_seq,d_model)
 
-        
+        self.blocks=nn.ModuleList([
+            TransformerBlock(d_model,n_heads,d_ff)
+            for _ in n_layers
+        ])
+        self.ln_final=nn.LayerNorm(d_model)
+        self.head=nn.Linear(d_model,vocab_size,bias=False)
