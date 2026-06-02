@@ -26,143 +26,6 @@ While these components appear simple individually, their interactions determine 
 This repository serves as a personal research sandbox for implementing, analyzing, and experimenting with such components from first principles.
 
 ---
-
-## Repository Goals
-
-* Implement Transformer modules from scratch.
-* Develop intuition for architectural design choices.
-* Reproduce important ideas from influential papers.
-* Study efficiency-performance tradeoffs.
-* Build foundations for future LLM research.
-* Create reusable components for larger language model projects.
-
----
-
-## Implemented Components
-
-### Attention Mechanisms
-
-* Multi-Head Self Attention
-* Scaled Dot Product Attention
-* Causal Attention Masks
-
-### Positional Encoding
-
-* Sinusoidal Positional Encoding
-* Rotary Position Embeddings (planned)
-
-### Feed Forward Networks
-
-* Standard Transformer MLP
-* Gated MLP Variants (planned)
-
-### Normalization Layers
-
-* LayerNorm
-* RMSNorm (planned)
-
-### Advanced Components (Planned)
-
-* Multi Query Attention (MQA)
-* Grouped Query Attention (GQA)
-* Flash Attention
-* Sliding Window Attention
-* Mixture of Experts (MoE)
-* KV Cache
-* Speculative Decoding Components
-
----
-
-## Example Usage
-
-```python
-from components.attention import MultiHeadAttention
-
-attention = MultiHeadAttention(
-    d_model=512,
-    num_heads=8
-)
-
-output = attention(x)
-```
-
----
-
-## Research Questions
-
-Some questions I am actively exploring:
-
-### Attention
-
-* Why does attention scale so well?
-* How much information is stored in individual heads?
-* When do attention heads become redundant?
-
-### Positional Representations
-
-* Why do RoPE-based models outperform absolute positional embeddings?
-* What happens at very long context lengths?
-
-### Feed Forward Networks
-
-* Why do MLP layers occupy most parameters in modern LLMs?
-* How important are gated activations such as SwiGLU?
-
-### Scaling
-
-* Which Transformer components become bottlenecks at scale?
-* What architectural modifications improve inference efficiency?
-
----
-
-## Future Experiments
-
-* Reproduce a miniature GPT-style decoder model.
-* Train small language models from scratch.
-* Compare LayerNorm vs RMSNorm.
-* Compare RoPE vs Sinusoidal embeddings.
-* Attention head ablation studies.
-* MoE routing experiments.
-* Long-context architecture investigations.
-
----
-
-## Learning Resources
-
-### Foundational Papers
-
-* Attention Is All You Need (2017)
-* RoFormer (Rotary Position Embeddings)
-* FlashAttention
-* Switch Transformer
-* LLaMA
-* DeepSeek-V3 Technical Report
-
-### Recommended Implementations
-
-* Hugging Face Transformers
-* nanoGPT
-* litGPT
-* Megatron-LM
-
----
-
-## Why This Repository Exists
-
-My long-term goal is to contribute to frontier AI research by developing a deep understanding of language model architecture, training systems, and scaling laws.
-
-This repository documents that learning journey one component at a time.
-
----
-
-## License
-
-MIT License
-
-# GPT-Style Transformer Components
-
-Welcome to **Some-transformer-components**! This repository is dedicated to building the fundamental raw components of a GPT-style (Decoder-only) Transformer model from the ground up. It covers the entire end-to-end pipeline, starting from synthetic data generation all the way to model assembly and training.
-
 ## 🚀 Project Overview
 
 This project breaks down the complex architecture of a Transformer into understandable, modular, and highly readable Python scripts. It is designed to demonstrate how large language models function under the hood, making it a great resource for understanding attention mechanisms and decoder-only sequential processing.
@@ -181,6 +44,41 @@ The repository is modularized into distinct files, each representing a crucial s
 * **`Synthetic_Repeated_Pattern_Dataset.py`**: A custom data generation module that creates synthetic sequences with repeated patterns. This serves as a lightweight, predictable dataset to test if the model is successfully learning dependencies.
 * **`Parameter_Dataset_Model_Initialization.py`**: A centralized configuration script that handles the initialization of all hyperparameters, prepares the synthetic dataset, and initializes the MiniTransformer model.
 * **`Training_Pipeline.py`**: The main execution script containing the complete training loop. It manages forward passes, loss calculation, backpropagation, and weight optimization.
+
+
+---
+
+
+
+## Example Usage
+
+```python
+from components.attention import MultiHeadAttention
+
+attention = MultiHeadAttention(
+    d_model=512,
+    num_heads=8
+)
+
+output = attention(x)
+```
+
+---
+
+
+## Learning Resources
+
+### Foundational Papers
+
+* Attention Is All You Need (2017)
+* LLaMA
+* DeepSeek-V3 Technical Report
+
+
+## Why This Repository Exists
+
+This repository is dedicated to building the fundamental raw components of a GPT-style (Decoder-only) Transformer model from the ground up. It covers the entire end-to-end pipeline, starting from synthetic data generation all the way to model assembly and training.
+
 
 ## 🛠️ Getting Started
 
