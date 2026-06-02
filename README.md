@@ -1,5 +1,164 @@
 ﻿# Some-transformer-components
 This repo consists of building different raw components of a GPT style (Decoder only) traansformer model starting from synthetic data generation to training that model
+# Some Transformer Components
+
+A research-oriented collection of Transformer building blocks implemented from scratch in PyTorch.
+
+This repository is part of my effort to deeply understand the architectural components that power modern Large Language Models (LLMs) such as GPT, Llama, Gemini, Claude, DeepSeek, and Grok.
+
+Instead of treating Transformers as black boxes, the goal of this project is to study individual components in isolation, understand why they exist, analyze their mathematical foundations, and explore how design choices affect training dynamics, efficiency, and scaling behavior.
+
+---
+
+## Motivation
+
+Modern LLMs are built from a surprisingly small set of recurring ideas:
+
+* Attention mechanisms
+* Positional representations
+* Feed-forward networks
+* Normalization layers
+* Residual pathways
+* Routing mechanisms (MoE)
+* Efficient attention variants
+
+While these components appear simple individually, their interactions determine the capabilities of models with billions or even trillions of parameters.
+
+This repository serves as a personal research sandbox for implementing, analyzing, and experimenting with such components from first principles.
+
+---
+
+## Repository Goals
+
+* Implement Transformer modules from scratch.
+* Develop intuition for architectural design choices.
+* Reproduce important ideas from influential papers.
+* Study efficiency-performance tradeoffs.
+* Build foundations for future LLM research.
+* Create reusable components for larger language model projects.
+
+---
+
+## Implemented Components
+
+### Attention Mechanisms
+
+* Multi-Head Self Attention
+* Scaled Dot Product Attention
+* Causal Attention Masks
+
+### Positional Encoding
+
+* Sinusoidal Positional Encoding
+* Rotary Position Embeddings (planned)
+
+### Feed Forward Networks
+
+* Standard Transformer MLP
+* Gated MLP Variants (planned)
+
+### Normalization Layers
+
+* LayerNorm
+* RMSNorm (planned)
+
+### Advanced Components (Planned)
+
+* Multi Query Attention (MQA)
+* Grouped Query Attention (GQA)
+* Flash Attention
+* Sliding Window Attention
+* Mixture of Experts (MoE)
+* KV Cache
+* Speculative Decoding Components
+
+---
+
+## Example Usage
+
+```python
+from components.attention import MultiHeadAttention
+
+attention = MultiHeadAttention(
+    d_model=512,
+    num_heads=8
+)
+
+output = attention(x)
+```
+
+---
+
+## Research Questions
+
+Some questions I am actively exploring:
+
+### Attention
+
+* Why does attention scale so well?
+* How much information is stored in individual heads?
+* When do attention heads become redundant?
+
+### Positional Representations
+
+* Why do RoPE-based models outperform absolute positional embeddings?
+* What happens at very long context lengths?
+
+### Feed Forward Networks
+
+* Why do MLP layers occupy most parameters in modern LLMs?
+* How important are gated activations such as SwiGLU?
+
+### Scaling
+
+* Which Transformer components become bottlenecks at scale?
+* What architectural modifications improve inference efficiency?
+
+---
+
+## Future Experiments
+
+* Reproduce a miniature GPT-style decoder model.
+* Train small language models from scratch.
+* Compare LayerNorm vs RMSNorm.
+* Compare RoPE vs Sinusoidal embeddings.
+* Attention head ablation studies.
+* MoE routing experiments.
+* Long-context architecture investigations.
+
+---
+
+## Learning Resources
+
+### Foundational Papers
+
+* Attention Is All You Need (2017)
+* RoFormer (Rotary Position Embeddings)
+* FlashAttention
+* Switch Transformer
+* LLaMA
+* DeepSeek-V3 Technical Report
+
+### Recommended Implementations
+
+* Hugging Face Transformers
+* nanoGPT
+* litGPT
+* Megatron-LM
+
+---
+
+## Why This Repository Exists
+
+My long-term goal is to contribute to frontier AI research by developing a deep understanding of language model architecture, training systems, and scaling laws.
+
+This repository documents that learning journey one component at a time.
+
+---
+
+## License
+
+MIT License
 
 # GPT-Style Transformer Components
 
