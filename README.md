@@ -26,6 +26,10 @@ While these components appear simple individually, their interactions determine 
 This repository serves as a personal research sandbox for implementing, analyzing, and experimenting with such components from first principles.
 
 ---
+## Some Results
+These are some of the results obtained after model training
+<img width="1289" height="440" alt="image" src="https://github.com/user-attachments/assets/cd52c759-1c25-41fc-a2e2-be5253f433a6" />
+
 ## 🚀 Project Overview
 
 This project breaks down the complex architecture of a Transformer into understandable, modular, and highly readable Python scripts. It is designed to demonstrate how large language models function under the hood, making it a great resource for understanding attention mechanisms and decoder-only sequential processing.
