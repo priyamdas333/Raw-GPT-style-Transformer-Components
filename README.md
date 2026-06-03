@@ -31,6 +31,10 @@ These are some of the results obtained after model training
 
 <img width="1289" height="440" alt="image" src="https://github.com/user-attachments/assets/cd52c759-1c25-41fc-a2e2-be5253f433a6" />
 
+## Some personal observations:
+
+A Transformer model internally behaves as a collection of projection modules which are constantly just expressing input information from lower to higher dimensions and vice-versa in order to extract rich, relevant features useful for context,next-word prediction scenarios. For e.g, the data is initially present in the (d_model) vector space which are then expressed into attention head space (d_model,d_head) space after which they are again expressed by MLP in a much higher space for detecting rich features and after that they are finally decomposed into the residual space.
+
 ## Project Overview
 
 This project breaks down the complex architecture of a Transformer into understandable, modular, and highly readable Python scripts. It is designed to demonstrate how large language models function under the hood, making it a great resource for understanding attention mechanisms and decoder-only sequential processing.
