@@ -97,4 +97,4 @@ To explore or run this project locally, follow these steps:
 1. **Clone the repository:**
    ```bash
    git clone https://github.com/priyamdas333/Raw-GPT-style-Transformer-Components.git
-   cd Some-transformer-components
+   cd Raw-GPT-style-Transformer-Components
