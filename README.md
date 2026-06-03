@@ -83,6 +83,7 @@ output = attention(x)
 * LLaMA
 * DeepSeek-V3 Technical Report
 
+I have written a Medium blog about Dimension Arithmetic of Tensors: [https://medium.com/@pd333a3/the-secret-tensor-world-inside-transformers-784fb79aa388]
 
 ## Why This Repository Exists
 
